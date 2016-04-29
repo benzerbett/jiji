@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jsafaiyeh.fabricexampleapp" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activites.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="44c51c2d2b3868d985385aa04bec54f710309e62" />
+
+        <activity
+            android:name=".activites.EmbedTweetsActivity"
+            android:label="@string/title_activity_embed_tweet" />
+        <activity
+            android:name=".activites.TimelineActivity"
+            android:label="@string/title_activity_timeline" />
+        <activity
+            android:name=".activites.LogInActivity"
+            android:label="@string/title_activity_log_in" >
+        </activity>
+        <activity
+            android:name=".activites.DigitsActivity"
+            android:label="@string/title_activity_twitter_digits" >
+        </activity>
+
+        <receiver
+            android:name=".receivers.DigitsResultReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.digits.sdk.android.UPLOAD_COMPLETE" />
+                <action android:name="com.digits.sdk.android.UPLOAD_FAILED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activites.BannerAdActivity"
+            android:label="@string/title_activity_banner_ad" >
+        </activity>
+        <activity
+            android:name="com.mopub.mobileads.MoPubActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.mopub.mobileads.MraidActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.mopub.common.MoPubBrowser"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activites.FullScreenAdActivity"
+            android:label="@string/title_activity_full_screen_ad" >
+        </activity>
+        <activity
+            android:name=".activites.NativeAdActivity"
+            android:label="@string/title_activity_native_ad" >
+        </activity>
+        <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    </application>
+
+</manifest>
